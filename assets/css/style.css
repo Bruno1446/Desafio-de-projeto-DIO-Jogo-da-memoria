@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #096579, #00d4ff);
+}
+
+.cartas {
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(78, 151, 185);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.9s;
+}
+
+.cardFront,
+.cardBack {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.jogoDaMemoria {
+    height: 640px;
+    width: 640px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    perspective: 1000px;
+}
+
+.cartas:active {
+    transform: scale(0.97);
+    transition: transform 0.3s;
+}
+
+.cardFront {
+    transform: rotateY(180deg);
+}
+
+.cartas.gira {
+    transform: rotateY(180deg);
+}
